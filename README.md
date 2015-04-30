@@ -5,19 +5,20 @@ code in this node project https://github.com/wearefractal/msi-keyboard.
 
 Installing
 ----------
-''''
+```
 sudo pip install .
-''''
+```
 
 Running
 -------
 To initialize your config:
-'''
+```
 msikeys-config.py
-'''
+```
+
 To apply your config at startup:
-'''
+```
 msikeys-init.py
-'''
+```
 
 
