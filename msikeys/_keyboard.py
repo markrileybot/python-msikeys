@@ -1,11 +1,13 @@
 
+import msikeys
+
 class Region(object):
 
     def __init__(self, id, io):
         self._id = id
         self._io = io
-        self._color = 0
-        self._level = 0
+        self._color = msikeys.Color.OFF
+        self._level = msikeys.Level.MED
     
     @property
     def id(self):
@@ -29,15 +31,21 @@ class Region(object):
 
     def load(self):
         self._io.read_region(self)
+        return self
 
     def commit(self):
         self._io.write_region(self)
+        return self
 
 
 class Keyboard(object):
 
     def __init__(self, io):
-        self._regions = [Region(1, io), Region(2, io), Region(3, io)]
+        self._io = io
+        self._regions = [Region(msikeys.Region.LEFT, io),
+                         Region(msikeys.Region.MIDDLE, io),
+                         Region(msikeys.Region.RIGHT, io)]
+        self._mode = msikeys.Mode.NORMAL
 
     def __iter__(self):
         return iter(self._regions)
@@ -71,12 +79,22 @@ class Keyboard(object):
         for i, region in enumerate(self):
             region.level = levels[i]
 
+    @property
+    def mode(self):
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        self._mode = mode
+
     def load(self):
         for region in self:
             region.load()
+        self._io.read_keyboard(self)
+        return self
 
     def commit(self):
         for region in self:
             region.commit()
-
-
+        self._io.write_keyboard(self)
+        return self
