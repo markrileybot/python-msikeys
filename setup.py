@@ -2,15 +2,18 @@
 
 from setuptools import setup
 
+VERSION = '0.0.1'
+
 setup(
     name='msikeys',
-    version='0.0.1',
+    version=VERSION,
     author='Mark Riley',
     author_email='mark@markriley.net',
     url='https://github.com/markrileybot/python-msikeys',
     license='MIT',
     description=open('README.md').readline(),
     long_description=open('README.md').read(),
+    download_url='https://github.com/markrileybot/python-msikeys/tarball/%s' % VERSION,
     scripts=[
         'bin/msikeys-config.py',
         'bin/msikeys-init.py'
@@ -28,5 +31,8 @@ setup(
     extras_require={
         'wxWidgetsApp': ['wxpython >= 3.0.2'],
     },
+    keywords=[
+        'MSI', 'Keyboard', 'Backlight'
+    ],
     zip_safe=True
 )
