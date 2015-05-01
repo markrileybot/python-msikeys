@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(
-    name='python-msikeys',
+    name='msikeys',
     version='0.0.1',
     author='Mark Riley',
     author_email='mark@markriley.net',
