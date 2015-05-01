@@ -56,5 +56,5 @@ kb.commit()
 
 Load keyboard at login (in your ~/.bash_profile):
 ```
-python msikeys-init.py
+msikeys-init.py
 ```
