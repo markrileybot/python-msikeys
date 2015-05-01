@@ -8,7 +8,7 @@ Note that you must have permission to talk to your hid devices.  Otherwise, you 
 Installing
 ----------
 ```
-sudo pip install .
+sudo pip install msikeys
 ```
 
 You'll likely have to create a new udev rule in /etc/udev/rules.d/10-msikeys.rules so that your user can talk to this device
