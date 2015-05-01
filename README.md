@@ -1,6 +1,6 @@
 Python MSI Keys
 ===============
-Neat-O python app to control your fancy MSI GT72 Dominator keyboard backlight.  I learned the protocol by reading the
+Neat-O python app to control your fancy MSI steelseries keyboard backlight.  I learned the protocol by reading the
 code in this node project https://github.com/wearefractal/msi-keyboard.
 
 Note that you must have permission to talk to your hid devices.  Otherwise, you have to run this code with ```sudo```
