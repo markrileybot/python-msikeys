@@ -54,7 +54,7 @@ kb.colors = [msikeys.Color.RED, msikeys.Color.WHITE, msikeys.Color.BLUE]
 kb.commit()
 ```
 
-Load keyboard at login (in your ~/.bashrc):
+Load keyboard at login (in your ~/.bash_profile):
 ```
 python msikeys-init.py
 ```
