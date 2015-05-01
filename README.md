@@ -11,6 +11,17 @@ Installing
 sudo pip install .
 ```
 
+You'll likely have to create a new udev rule in /etc/udev/rules.d/10-msikeys.rules so that your user can talk to this device
+```
+SUBSYSTEM=="usb", ATTR{idVendor}=="1770", ATTR{idProduct}=="ff00", GROUP="input", SYMLINK+="msikeyboard_backlight"
+```
+Note that your user must be a member of the group in the above rule.
+
+Then reboot or do something like
+```
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
 Running
 -------
 To initialize your config:
